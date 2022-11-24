@@ -18,9 +18,10 @@
         android:contentDescription="OTP"/>
 
     <TextView
+        android:id="@+id/tv_phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Verificação"
+        android:text="Verifique o telefone"
         android:textSize="25sp"
         android:textStyle="bold|normal"
         android:textAlignment="center"/>
@@ -51,19 +52,20 @@
 
             <androidx.compose.ui.platform.ComposeView
                 android:id="@+id/otp_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
-                android:layout_marginBottom="16dp"
-                android:ems="1"
+                android:layout_marginBottom="10dp"
                 android:inputType="number"
-                android:padding="10dp"
-                android:textSize="20dp"
-                android:textStyle="bold|normal"/>
+                android:focusableInTouchMode= "true"
+                android:padding= "25dp"
+                app:OtpViewType="line"
+                app:OtpItemCount="6"
+                app:OtpLineColor="black"/>
 
             <Button
-                android:id="@+id/bt_confirm_number"
+                android:id="@+id/bt_confirm_otp"
                 android:layout_width="186dp"
                 android:layout_height="wrap_content"
                 android:text="Continue"
