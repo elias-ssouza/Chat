@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1054545697869",
+    "project_id": "chatandtalk-4d205",
+    "storage_bucket": "chatandtalk-4d205.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1054545697869:android:3effdcc8421a9214355004",
+        "android_client_info": {
+          "package_name": "com.example.chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1054545697869-gfgcd4f0oee52bpbi2e0fc69l3hvq9mc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1TuD4HQaYwKMG3f87skGQGbp1ri-5kXk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1054545697869-gfgcd4f0oee52bpbi2e0fc69l3hvq9mc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
