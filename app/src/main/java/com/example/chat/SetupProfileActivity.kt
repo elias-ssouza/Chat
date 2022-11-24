@@ -5,8 +5,8 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ProgressBar
 import com.example.chat.databinding.ActivitySetupProfileBinding
+import com.example.chat.model.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
@@ -45,6 +45,29 @@ class SetupProfileActivity : AppCompatActivity() {
             if (selectedImage !=null){
                 val reference = storage!!.reference.child("Perfil")
                     .child(auth!!.uid!!)
+                reference.putFile(selectedImage!!).addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        reference.downloadUrl.addOnCompleteListener { uri ->
+                            val imageUrl = uri.toString()
+                            val uid = auth!!.uid
+                            val phone = auth!!.currentUser!!.phoneNumber
+                            val name: String = binding!!.etInsertName.text.toString()
+                            val user = User(uid, name, phone, imageUrl)
+                            database!!.reference
+                                .child("users")
+                                .child(uid!!)
+                                .setValue(user)
+                                .addOnCompleteListener {
+                                    dialog!!.dismiss()
+                                    val intent =
+                                        Intent(this@SetupProfileActivity, MainActivity::class.java)
+                                    startActivity(intent)
+                                    finish()
+                                }
+                        }
+                    }
+
+                }
             }
         }
     }
