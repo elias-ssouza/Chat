@@ -98,6 +98,8 @@ class SetupProfileActivity : AppCompatActivity() {
                         }
                     }
                 }
+                binding!!.imageProfile.setImageURI(data.data)
+                selectedImage = data.data
             }
         }
     }
