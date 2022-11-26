@@ -10,6 +10,8 @@ import com.example.chat.model.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
+import java.util.*
+import kotlin.collections.HashMap
 
 class SetupProfileActivity : AppCompatActivity() {
 
@@ -67,6 +69,34 @@ class SetupProfileActivity : AppCompatActivity() {
                         }
                     }
 
+                }
+            }
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (data != null){
+            if (data.data != null) {
+                val uri = data.data
+                val storage = FirebaseStorage.getInstance()
+                val time = Date().time
+                val reference = storage.reference
+                    .child ("Profile")
+                    .child(time.toString()+ "")
+                reference.putFile(uri!!).addOnCompleteListener { task ->
+                    if (task.isSuccessful){
+                        reference.downloadUrl.addOnCompleteListener { uri ->
+                            val filePath = uri.toString()
+                            val obj = HashMap<String,Any>()
+                            obj ["image"] = filePath
+                            database!!.reference
+                                .child("users")
+                                .child(FirebaseAuth.getInstance().uid!!)
+                                .updateChildren(obj).addOnSuccessListener {  }
+                        }
+                    }
                 }
             }
         }

@@ -2,9 +2,9 @@ package com.example.chat.model
 
 class User {
     var uid: String? = null
-    var name: String? null
-    var phoneNumber: String? null
-    var profileImage: String? null
+    var name: String? = null
+    var phoneNumber: String? = null
+    var profileImage: String? = null
     constructor(){}
     constructor(
         uid:String?,
