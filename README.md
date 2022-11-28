@@ -8,4 +8,6 @@ Construção das telas de verificação de número, confirmação de código de 
 
 #Segunda Versão
 
-Integração com o Firebase: authentication, realtime database e firestore
+Integração com o Firebase: authentication, realtime database e firestore.
+
+Criação da lista de usuários.
