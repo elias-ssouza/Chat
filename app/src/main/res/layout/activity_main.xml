@@ -14,7 +14,8 @@
         android:text="Chat 'n Talk"
         android:textSize="25sp"
         android:textStyle="bold|normal"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:layout_marginTop="10dp"/>
 
     <View
         android:layout_width="match_parent"
@@ -32,7 +33,7 @@
                 android:id="@+id/rv_main"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:listitem="@layout/itemProfile">
+                tools:listitem="@layout/item_profile">
             </androidx.recyclerview.widget.RecyclerView>
         </LinearLayout>
     </View>
