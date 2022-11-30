@@ -8,12 +8,33 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/tv_main"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Chat 'n Talk"
+        android:textSize="25sp"
+        android:textStyle="bold|normal"
+        android:textAlignment="center"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/gray">
+
+        <LinearLayout
+            android:layout_width = "match_parent"
+            android:layout_height= "wrap_content"
+            android:layout_marginTop= "6dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/itemProfile">
+            </androidx.recyclerview.widget.RecyclerView>
+        </LinearLayout>
+    </View>
 
 </LinearLayout>
