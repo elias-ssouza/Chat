@@ -11,3 +11,5 @@ Construção das telas de verificação de número, confirmação de código de 
 Integração com o Firebase: authentication, realtime database e firestore.
 
 Criação da lista de usuários.
+
+Criação da tela de chat.
