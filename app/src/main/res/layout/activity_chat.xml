@@ -84,7 +84,8 @@
         android:orientation="horizontal"
         android:layout_above="@id/ll_activity01"
         android:layout_alignParentBottom="true"
-        android:weightSum="2">
+        android:weightSum="2"
+        android:background="@drawable/bottom_shape">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
