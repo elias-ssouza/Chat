@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    
+    <TextView
+        android:id="@+id/tv_delete_everyone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Deletar para todos"
+        android:textAlignment="textEnd"
+        android:padding="10dp"
+        android:textSize="16sp"
+        android:textStyle="bold|normal"/>
+
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancelar"
+        android:textAlignment="textEnd"
+        android:padding="10dp"
+        android:textSize="16sp"
+        android:textStyle="bold|normal"/>
+
+    <TextView
+        android:id="@+id/tv_delete_4_me"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Deletar para mim"
+        android:textAlignment="textEnd"
+        android:padding="10dp"
+        android:textSize="16sp"
+        android:textStyle="bold|normal"/>
+
+</LinearLayout>
