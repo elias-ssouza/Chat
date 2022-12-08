@@ -3,6 +3,7 @@ package com.example.chat
 import android.app.ProgressDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ProgressBar
 import com.example.chat.adapter.MessagesAdapter
 import com.example.chat.databinding.ActivityChatBinding
 import com.example.chat.model.Message
@@ -11,7 +12,7 @@ import com.google.firebase.storage.FirebaseStorage
 
 class ChatActivity : AppCompatActivity() {
 
-    val binding: ActivityChatBinding? = null
+    var binding: ActivityChatBinding? = null
     val adapter: MessagesAdapter? = null
     var message: ArrayList<Message>?= null
     var senderRoom: String? = null
@@ -24,6 +25,15 @@ class ChatActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_chat)
+
+        binding = ActivityChatBinding.inflate(layoutInflater)
+        setContentView(binding!!.root)
+        setSupportActionBar(binding!!.toolbar)
+        database = FirebaseDatabase.getInstance()
+        storage = FirebaseStorage.getInstance()
+        dialog = ProgressDialog(this@ChatActivity)
+        dialog!!.setMessage("Carregando imagem")
+        dialog!!.setCancelable(false)
+        message = ArrayList()
     }
 }
