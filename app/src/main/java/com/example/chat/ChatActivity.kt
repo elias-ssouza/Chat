@@ -4,9 +4,12 @@ import android.app.ProgressDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ProgressBar
+import androidx.compose.ui.tooling.data.EmptyGroup.name
+import com.bumptech.glide.Glide
 import com.example.chat.adapter.MessagesAdapter
 import com.example.chat.databinding.ActivityChatBinding
 import com.example.chat.model.Message
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 
@@ -35,5 +38,14 @@ class ChatActivity : AppCompatActivity() {
         dialog!!.setMessage("Carregando imagem")
         dialog!!.setCancelable(false)
         message = ArrayList()
+        val name = intent.getStringExtra("name")
+        val profile = intent.getStringExtra("image")
+        binding!!.tvUsername01.text = name
+        Glide.with(this@ChatActivity).load(profile)
+            .placeholder(com.google.android.gms.base.R.drawable.common_full_open_on_phone)
+            .into(binding!!.ivProfile01)
+        binding!!.ivSend.setOnClickListener{ finish()}
+        receiverUid = intent.getStringExtra("uid")
+        senderUid = FirebaseAuth.getInstance()
     }
 }
