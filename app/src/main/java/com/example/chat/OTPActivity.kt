@@ -60,7 +60,7 @@ class OTPActivity : AppCompatActivity() {
             }).build()
 
         PhoneAuthProvider.verifyPhoneNumber(options)
-        binding!!.otpView?.setOtpCompletionListener { otp ->
+        binding!!.otpView.setOtpCompletionListener { otp ->
             val credential = PhoneAuthProvider.getCredential(verificationId!!,otp)
             auth!!.signInWithCredential(credential)
                 .addOnCompleteListener { task ->
@@ -74,7 +74,5 @@ class OTPActivity : AppCompatActivity() {
                 }
 
         }
-
-
     }
 }
