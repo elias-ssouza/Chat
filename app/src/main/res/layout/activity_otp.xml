@@ -50,10 +50,10 @@
             android:gravity="center"
             android:layout_margin="10dp">
 
-            <androidx.compose.ui.platform.ComposeView
+            <com.mukesh.OtpView
                 android:id="@+id/otp_view"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="10dp"
