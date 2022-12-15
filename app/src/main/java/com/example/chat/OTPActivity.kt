@@ -72,7 +72,6 @@ class OTPActivity : AppCompatActivity() {
                         Toast.makeText(this@OTPActivity,"Failed", Toast.LENGTH_SHORT).show()
                     }
                 }
-
         }
     }
 }

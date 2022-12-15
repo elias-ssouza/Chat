@@ -122,7 +122,6 @@
                         android:paddingEnd="1dp"
                         android:textSize="15sp"
                         android:textStyle="bold"
-
                         android:background="transparent"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
